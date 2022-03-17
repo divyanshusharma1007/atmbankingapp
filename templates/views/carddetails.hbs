@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>carddetails</title>
+     <style>
+          * {
+               display: borderbox;
+          }
+
+          body {
+               background-image: radial-gradient(circle 610px at 5.2% 51.6%, rgba(5, 8, 114, 1) 0%, rgba(7, 3, 53, 1) 97.5%);
+          }
+
+          .heading {
+               color: rgb(228, 228, 228);
+               text-align: center;
+               margin-top: 30px;
+               font-size: 50px;
+               text-shadow: 5px 5px 8px rgb(255, 133, 115);
+          }
+
+          .login {
+               width: 100%;
+               display: flex;
+               justify-content: center;
+          }
+
+          .main {
+               display: flex;
+               width: 35%;
+               flex-direction: column;
+               border: 4px solid rgb(255, 255, 255);
+               padding: 12px;
+               box-shadow: 5px 4px 4px rgb(218, 46, 16);
+               border-radius: 0px 20px 0px 20px;
+               background-image: radial-gradient(circle 685.3px at 47.8% 55.1%, rgba(255, 99, 152, 1) 0%, rgba(251, 213, 149, 1) 90.1%);
+          }
+
+          .name {
+               display: flex;
+               flex-direction: column;
+               margin: 10px;
+          }
+
+          .contlabel {
+               font-weight: bolder;
+               font-size: 25px;
+               color: #050766;
+               text-shadow: 2px 2px 3px rgb(255, 255, 255);
+          }
+
+          .content {
+               font-size: 18px;
+               width: 95%;
+               padding: 10px;
+               padding-left: 14px;
+               margin-top: 10px;
+               margin-right: 20px;
+               font-weight: bolder;
+               background-image: linear-gradient(180deg, rgba(155, 254, 23, 1) 45.5%, rgba(36, 243, 8, 1) 97.9%);
+               color: #06054b;
+               border: 4px solid blue;
+               border-radius: 14px 4px 14px 4px;
+               box-shadow: 7px 6px 5px black;
+               text-shadow: 4px 1px 2px #d2ffd7;
+          }
+
+          .capche {
+               position: relative;
+               font-size: 39px;
+               border: 4px solid rgb(94, 94, 94);
+               width: 106px;
+               margin-top: 6px;
+               height: 40px;
+               /* padding-top: 20px; */
+               padding: 6px;
+               text-align: center;
+               border-radius: 15px;
+               background-color: #21D4FD;
+               background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+               font-weight: bolder;
+          }
+
+          .cap {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+          }
+
+
+          .btn-grad {
+               background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%)
+          }
+
+          .btn-grad {
+               margin: 10px;
+               padding: 15px 45px;
+               text-align: center;
+               text-transform: uppercase;
+               transition: 0.5s;
+               background-size: 200% auto;
+               color: white;
+               box-shadow: 0 0 20px #eee;
+               border-radius: 10px;
+               display: block;
+          }
+
+          .btn-grad:hover {
+               background-position: right center;
+               /* change the direction of the change here */
+               color: #fff;
+               text-decoration: none;
+          }
+
+          #error {
+               text-align: center;
+               font-size: 50px;
+               background: #ff8585;
+               /* fallback for old browsers */
+               background: -webkit-linear-gradient(to right, #ff8585, #ff42e6);
+               /* Chrome 10-25, Safari 5.1-6 */
+               background: linear-gradient(to right, #ff8585, #ff42e6);
+               /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+               -webkit-background-clip: text;
+               background-clip: text;
+               color: transparent;
+          }
+     </style>
+</head>
+
+<body>
+     <h1 class="heading">Log in </h1>
+     <div class="login">
+          <form action="/login" method="post" class="main">
+               <div class="name">
+                    <label for="cdno" class="contlabel">Enter your Card Number :</label>
+                    <input type="text" id="cdno" name="cdno" class="content" placeholder="Enter 15 degit card number "
+                         required>
+               </div>
+               <div class="name">
+                    <label for="Pin" class="contlabel">Pin :</label>
+                    <input type="text" id="Pin" name="pin" class="content" placeholder="Enter 15 your 4 degit Pin"
+                         required>
+               </div>
+               <div class="name">
+                    <div class="cap">
+                         <h3 class="contlabel">Enter the valid capche : </h3>
+                         <label for="name" class="capche">{{capche}}</label>
+                    </div>
+                    <input type="number" id="cap" name="cap" class="content" placeholder=" ENTER THE CAPCHE" required>
+               </div>
+               <div class="saver">
+                    <input type="submit" class="btn-grad" value="Log in">
+               </div>
+          </form>
+     </div>
+     <h2 id="error">{{dis}}</h2>
+</body>
+
+</html>
